@@ -4,3 +4,8 @@ python -m virtualenv venv
 
 para activar el entorno virtual
 .\venv\Scripts\activate
+
+para crear el archivo requirements.txt o actualizarlo
+pip freeze > requirements.txt
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link href="../../static/css/stylelogin.css">
+              <link rel="stylesheet" href="../static/cssLogin/stylelogin.css">
+      </head>
+      
+      <body>
+        <div class="container">
+              <div class="forms-container">
+                <div class="form-control signup-form">
+                  <form id="miFormulario" method="POST" action="{{ url_for('login.registro') }}">
+                    <h2>Registrate!!!</h2>
+                    <input type="text" placeholder="Nombre" id="Clie_Nombre" name="Clie_Nombre" required />
+                    <input type="email" placeholder="Correo" id="Usua_Correo" name="Usua_Correo" required />
+                    <input type="password" placeholder="Contraseña" id="Usua_Pass" name="Usua_Pass" required />
+                    <input type="password" placeholder="Confirma la Contraseña" id="Usua_Pass" name="confirm_Pass" required/>
+                    <button>Registrate</button>
+                  </form>
+      
+      
+                      <!-- Grupo: Terminos y Condiciones -->
+                  <div class="formulario__grupo" id="grupo__terminos">
+                      <label class="formulario__label1">
+                          <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                          Acepto los Terminos y Condiciones
+                      </label>
+                  </div>
+      
+                  <span>Inicia sesión con</span>
+                  <div class="socials">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                  </div>
+                </div>
+              
+                <div class="form-control signin-form">
+      
+                  <form action="{{ url_for('login.login') }}" class="formulario" id="formulario" method="POST">
+      
+                    <h2>Iniciar Sesion</h2>
+                       <!-- Grupo: Correo Electronico -->
+                  <div class="formulario__grupo" id="grupo__correo">
+                      <label for="correo" class="formulario__label">Correo Electrónico</label>
+                      <div class="formulario__grupo-input">
+                          <input type="email" class="formulario__input" name="Usua_Correo" id="correo" >
+                          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                      </div>
+                      <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                  </div>
+      
+               
+                  <!-- Grupo: Contraseña -->
+                  <div class="formulario__grupo" id="grupo__password">
+                      <label for="password" class="formulario__label">Contraseña</label>
+                      <div class="formulario__grupo-input">
+                          <input type="password" class="formulario__input" name="Usua_Pass" id="password">
+                          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                      </div>
+                      <p class="formulario__input-error">La contraseña debe tener como maximo 8 digitos y por lo menos una mayuscula, minuscula y caracter especial</p>
+                  </div>
+      
+                  <div class="formulario__mensaje" id="formulario__mensaje">
+                      <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                  </div>
+      
+                  <div class="formulario__grupo formulario__grupo-btn-enviar">
+                      <button type="submit" class="formulario__btn">Enviar</button>
+                      <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Bienvenido!</p>
+                  </div>
+      
+          </form>
+      
+      
+      
+                  <span>Inicia sesión con</span>
+                  <div class="socials">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="intros-container">
+                <div class="intro-control signin-intro">
+                  <div class="intro-control__inner">
+                    <h2>Bienvenido!</h2>
+                    <p>
+                      Te invitamos a unirte a nuestro sistema de información.
+                    </p>
+                    <button id="signup-btn">No tienes una cuenta? Registrate.</button>
+                  </div>
+                </div>
+                <div class="intro-control signup-intro">
+                  <div class="intro-control__inner">
+                    <h2>Hola de Nuevo!</h2>
+                    <p>
+                      Estamos emocionados que hagas parte de nuestro servicio de información.
+                    </p>
+                    <button id="signin-btn">Ya tienes una cuenta? Inicia Sesion.</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <script src="../static/jsLogin/script_login.js"></script>
+            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+      
+        </body>
+
+</body>
+</html>

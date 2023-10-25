@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+          <div class="form-control signup-form">
+            <form action="{{ url_for('login.registro') }}" class="formulario" id="formulario" method="POST">
+
+              <h2>Registrate!!!</h2>
+              <input type="text" placeholder="Nombre" id="Clie_Nombre" name="Clie_Nombre" required />
+              <input type="email" placeholder="Correo" id="Usua_Correo" name="Usua_Correo" required />
+              <input type="password" placeholder="Contraseña" id="Usua_Pass" name="Usua_Pass" required />
+              <button type="submit">Registrate</button>
+            </form>
+
+
+            <span>Inicia sesión con</span>
+            <div class="socials">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+          </div>
+          </div>
+        </div>
+    <p>Ya tienes una cuenta? <a href="/">Inicia sesión</a></p>
+</body>
+</html>
