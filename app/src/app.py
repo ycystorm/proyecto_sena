@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 #importamos las rutas desde el archivo routers
 app.register_blueprint(routers.inicio_bp)
+app.register_blueprint(routers.login_bp)
 
 if __name__ == "__main__":
     app.run(debug=True,port=4000)
