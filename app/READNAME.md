@@ -8,4 +8,5 @@ para activar el entorno virtual
 para crear el archivo requirements.txt o actualizarlo
 pip freeze > requirements.txt
 
+version utilizada de python es la 11.5
 

@@ -1,12 +1,11 @@
 from flask import Flask,render_template
 import os
+from  router import routers
 
 app = Flask(__name__)
 
-#ruta principal 
+#importamos las rutas desde el archivo routers
+app.register_blueprint(routers.inicio_bp)
 
-@app.route("/")
-def inicio():
-    return render_template('index.html')
-
-app.run(debug=True,port=4000)
+if __name__ == "__main__":
+    app.run(debug=True,port=4000)
