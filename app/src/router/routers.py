@@ -3,6 +3,7 @@ from flask import Flask,render_template
 import os
 from flask import  Blueprint
 
+
 app = Flask(__name__)
 
 #se crea un blueprint para la ruta de inicio 
