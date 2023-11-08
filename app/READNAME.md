@@ -10,3 +10,11 @@ pip freeze > requirements.txt
 
 version utilizada de python es la 11.5
 
+comandos para jecutar la migracion 
+flask db init 
+
+
+flask db migrate -m"comentario de la migracion"
+
+flask db upgrade
+

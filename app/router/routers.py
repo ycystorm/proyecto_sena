@@ -1,10 +1,12 @@
-
 from flask import Flask,render_template
 import os
 from flask import  Blueprint
 
 
+
 app = Flask(__name__)
+
+
 
 #se crea un blueprint para la ruta de inicio 
 inicio_bp = Blueprint('home',__name__)
@@ -28,6 +30,8 @@ def register():
 app.register_blueprint(inicio_bp)
 app.register_blueprint(login_bp)
 
+
 # Iniciamos el servidor web
 if __name__ == '__main__':
     app.run()
+
