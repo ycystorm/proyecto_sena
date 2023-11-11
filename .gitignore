@@ -5,3 +5,4 @@ __pycache__/
 *.py[cod]
 .pytest_cahe/
 migrations/
+__pycache__

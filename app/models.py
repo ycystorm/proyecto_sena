@@ -1,21 +1,17 @@
 from app import db
-from sqlalchemy import Column, Integer, String, Date, Enum, BLOB, Boolean, null
-
-
-
 class Clientes(db.Model):
     __tablename__ = "clientes"
-    ID_del_cliente = db.db.Column(db.db.Integer,primary_key=True)
-    Nombre_del_cliente = db.db.Column(db.db.String(50))
-    apellido_del_cliente = db.db.Column(db.db.String(50))
-    Correo_electrónico_del_cliente = db.db.Column(db.String(50))
-    Dirección_del_cliente = db.db.Column(db.db.String(50))
-    telefono_cliente = db.db.Column(db.db.Integer(15))
-    Fecha_de_nacimiento = db.db.Column(db.db.Date)
-    Género_del_cliente = db.db.Column(db.db.Enum("masculino", "femenino"))
-    numero_de_telefono_cliente = db.db.Column(db.Integer(30))
-    foto_De_perfil_client = db.db.Column(db.BLOB)
-    contraseña_cliente = db.db.Column(db.String(16))
+    ID_del_cliente = db.Column(db.db.Integer,primary_key=True)
+    Nombre_del_cliente = db.Column(db.db.String(50))
+    apellido_del_cliente = db.Column(db.db.String(50))
+    Correo_electrónico_del_cliente = db.Column(db.String(50))
+    Dirección_del_cliente = db.Column(db.db.String(50))
+    telefono_cliente = db.Column(db.db.Integer)
+    Fecha_de_nacimiento = db.Column(db.db.Date)
+    Género_del_cliente = db.Column(db.db.Enum("masculino", "femenino"))
+    numero_de_telefono_cliente = db.Column(db.Integer)
+    foto_De_perfil_client = db.Column(db.BLOB)
+    contraseña_cliente = db.Column(db.String(16))
     
 class Administrador(db.Model):
     __tablename__ = "administrador"
@@ -24,10 +20,10 @@ class Administrador(db.Model):
     apellido_del_administrador = db.Column(db.String(50))
     Correo_electrónico_del_administrador = db.Column(db.String(50))
     Dirección_del_administrador = db.Column(db.String(50))
-    Teléfono_del_administrador = db.Column(db.Integer(15))
+    Teléfono_del_administrador = db.Column(db.Integer)
     Fecha_de_nacimiento =  db.Column(db.Date)
     Género_del_administrador = db.Column(db.Enum("masculino", "femenino"))
-    numero_de_telefono_fijo_administrador = db.Column(db.Integer(10))
+    numero_de_telefono_fijo_administrador = db.Column(db.Integer)
     foto_De_perfil_administrador = db.Column(db.BLOB)
     contraseña_administrador = db.Column(db.String(16))
     eps = db.Column(db.String(50))
@@ -40,10 +36,10 @@ class Empleado(db.Model):
     Correo_electrónico_del_empleado = db.Column(db.String(50))
     permiso_empleado = db.Column(db.Enum("si", "no"))
     Dirección_del_empleado = db.Column(db.String(50))
-    Teléfono_del_empleado =db.Column(db.Integer(15))
+    Teléfono_del_empleado =db.Column(db.Integer)
     Fecha_de_empleado = db.Column(db.Date)
     Género_del_empleado = db.Column(db.Enum("masculino", "femenino"))
-    numero_de_telefono_fijo_empleado = db.Column(db.Integer(10))
+    numero_de_telefono_fijo_empleado = db.Column(db.Integer)
     foto_De_perfil_empleado = db.Column(db.BLOB)
     contraseña_empleado = db.Column(db.String(16))
     eps = db.Column(db.String(50))
@@ -64,5 +60,3 @@ class Informacion(db.Model):
     foto_info = db.Column(db.String(50))
     descripcion_info = db.Column(db.String(250))
     nombre_info = db.Column(db.String(50))
-
-

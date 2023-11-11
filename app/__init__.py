@@ -1,38 +1,33 @@
+#dependencia de flask 
 from flask import Flask
-#importacion de los blueprint
-from .router import routers
+#Dependencia de configuración
+from .config1 import Config
 from config import vistas
-#Dependencia de configuración de la base de datos
-from .database.mysql_db import Config
 #dependencia de modelo
 from flask_sqlalchemy import SQLAlchemy
+#dependencia para las migraciones 
 from flask_migrate import Migrate
-
-
+from .router import routers
 
 #crear el objeto python
 app = Flask(__name__)
 
-#Configuracion objeto flask mi conexion a base de datos
-app.config.from_object(Config)
+#Configuracion objeto flask
+#app.config.from_object(Config)
 
-
+#vincular blueprints del proyecto  
 app = Flask(__name__, static_folder=vistas.STATIC_FOLDER, template_folder=vistas.TEMPALTE_FOLDER)
 
-#importamos las rutas desde el archivo routers
+
 app.register_blueprint(routers.inicio_bp)
 app.register_blueprint(routers.login_bp)
 
-
 #Crear el objetto de Moldelos
-db = SQLAlchemy(app)
-
+#db = SQLAlchemy(app)
 
 #Crear objeto de migración
-migrate = Migrate(app,db)
+#migrate = Migrate(app,db)
 
-
-#importar los omodelos
-from database.migrationsModel import Clientes,Empleado,Administrador,Informacion,Proyecto
-
+#importar los modelos
+#from .models import Clientes,Empleado,Administrador,Informacion,Proyecto
 
