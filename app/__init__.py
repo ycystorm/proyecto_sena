@@ -13,21 +13,21 @@ from .router import routers
 app = Flask(__name__)
 
 #Configuracion objeto flask
-#app.config.from_object(Config)
+app.config.from_object(Config)
 
 #vincular blueprints del proyecto  
-app = Flask(__name__, static_folder=vistas.STATIC_FOLDER, template_folder=vistas.TEMPALTE_FOLDER)
+#app = Flask(__name__, static_folder=vistas.STATIC_FOLDER, template_folder=vistas.TEMPALTE_FOLDER)
 
 
-app.register_blueprint(routers.inicio_bp)
-app.register_blueprint(routers.login_bp)
+#app.register_blueprint(routers.inicio_bp)
+#app.register_blueprint(routers.login_bp)
 
 #Crear el objetto de Moldelos
-#db = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 #Crear objeto de migración
-#migrate = Migrate(app,db)
+migrate = Migrate(app,db)
 
 #importar los modelos
-#from .models import Clientes,Empleado,Administrador,Informacion,Proyecto
+from .models import Clientes,Empleado,Administrador,Proyecto,Usuarios,servicios
 

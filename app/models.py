@@ -1,9 +1,9 @@
 from app import db
 class Clientes(db.Model):
     __tablename__ = "clientes"
-    ID_del_cliente = db.Column(db.db.Integer,primary_key=True)
-    Nombre_del_cliente = db.Column(db.db.String(50))
-    apellido_del_cliente = db.Column(db.db.String(50))
+    id = db.Column(db.Integer,primary_key=True)
+    Nombre_del_cliente = db.Column(db.String(50))
+    apellido_del_cliente = db.Column(db.String(50))
     Correo_electrónico_del_cliente = db.Column(db.String(50))
     Dirección_del_cliente = db.Column(db.db.String(50))
     telefono_cliente = db.Column(db.db.Integer)
@@ -15,7 +15,7 @@ class Clientes(db.Model):
     
 class Administrador(db.Model):
     __tablename__ = "administrador"
-    ID_del_administrador = db.Column(db.Integer,primary_key=True)
+    id = db.Column(db.Integer,primary_key=True)
     Nombre_del_administrador = db.Column(db.String(50))
     apellido_del_administrador = db.Column(db.String(50))
     Correo_electrónico_del_administrador = db.Column(db.String(50))
@@ -30,7 +30,7 @@ class Administrador(db.Model):
     
 class Empleado(db.Model):
     __tablename = "empleado"
-    ID_del_empleado = db.Column(db.Integer,primary_key=True)
+    id = db.Column(db.Integer,primary_key=True)
     Nombre_del_empleado = db.Column(db.String(50))
     apellido_del_empleado = db.Column(db.String(50))
     Correo_electrónico_del_empleado = db.Column(db.String(50))
@@ -46,17 +46,28 @@ class Empleado(db.Model):
     
 class Proyecto(db.Model):
     __tablename__= "proyectos"
-    
-    id_proyecto = db.Column(db.Integer,primary_key=True)
+    id = db.Column(db.Integer,primary_key=True)
     nombre_Del_proyecto = db.Column(db.String(50))
     nombre_del_cliente_de_proyecto = db.Column(db.String(50))
     nombre_empleados_participantes_proyecto = db.Column(db.String(50))
     descripcion_del_proyecto = db.Column(db.String(250))
     material_necesitado_del_proyecto = db.Column(db.String(250))
 
-class Informacion(db.Model):
+class servicios(db.Model):
     __tablename__ = "informacion_general"
-    id_info = db.Column(db.Integer,primary_key=True)
+    id = db.Column(db.Integer,primary_key=True)
     foto_info = db.Column(db.String(50))
     descripcion_info = db.Column(db.String(250))
     nombre_info = db.Column(db.String(50))
+
+class Usuarios(db.Model):
+    __tablename__ = "Usuarios"
+    id = db.Column(db.Integer,primary_key=True)
+    ID_del_cliente = db.Column(db.db.Integer, db.ForeignKey('clientes.id'))
+    ID_del_administrador = db.Column(db.Integer, db.ForeignKey('administrador.id'))
+    ID_del_empleado = db.Column(db.Integer, db.ForeignKey('empleado.id'))
+    Usuario_rol =db.Column(db.Integer)
+    Correo_electrónico_usuarios = db.Column(db.String(50))
+    contraseña_usuario = db.Column(db.String(16))
+    Nombre_usuarios = db.Column(db.String(50))
+    
