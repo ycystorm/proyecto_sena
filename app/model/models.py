@@ -1,4 +1,4 @@
-from app import db
+from utils.db import db
 class Clientes(db.Model):
     __tablename__ = "clientes"
     id = db.Column(db.Integer,primary_key=True)
@@ -70,4 +70,6 @@ class Usuarios(db.Model):
     Correo_electrónico_usuarios = db.Column(db.String(50))
     contraseña_usuario = db.Column(db.String(16))
     Nombre_usuarios = db.Column(db.String(50))
+    
+    
     
